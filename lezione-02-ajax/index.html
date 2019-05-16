@@ -5,13 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AJAX Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        .lista_speciale {
+            color: green;
+        }
+
+        [name="aaa"] {
+            color: pink;
+        }
+
+        div[name="aaa"] > .lista_speciale {
+
+        }
+    </style>
 </head>
 <body>
     <h1>Questa è una prova di ajax</h1>
-
-    <ul id="lista"></ul>
-
-
+    
+    <section>
+        <h3>lista0</h3>
+        <ul id="lista0"></ul>
+    </section>
+    <section>
+        <h3>lista1</h3>
+        <ul id="lista1" class="lista_speciale"></ul>
+    </section>
+    <section>
+        <h3>lista2</h3>
+        <ul id="lista2" class="lista_speciale"></ul>
+    </section>
+    <section>
+        <h3>lista3</h3>
+        <ul id="lista3"></ul>
+    </section>
+    <div>
+        <h3>lista4</h3>
+        <ul id="lista4" name="aaa"></ul>
+    </div>
+    
     <script src="./js/index.js"></script>
 </body>
 </html>
