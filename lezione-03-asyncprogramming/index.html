@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programmazione async</title>
+</head>
+<body>
+    <button onclick="eventoDiClick()">ORDINAMENTO</button>
+    <div id="ris" style="background: pink; min-height: 40px; min-width: 200px;"></div>
+    <script>
+        function isOrderedArray (array = []) {
+            for (let i = 0; i < (array.length - 1); i++) {
+                if (array[i] > array[i+1]) {
+                    return false;
+                }
+            };
+            return true;
+        }
+
+        function eventoDiClick () {
+            console.log('inizio ordine');
+
+            sort1()
+
+            console.log('fine ordinamento');
+        }
+
+        function sort1 () {
+            setTimeout(() => {
+                var array  = [5, 20, 13, 2, 8, 90];
+                var orderedArray = array.sort(function bogosort (a, b) {
+                    return Math.floor(Math.random() + 0.5); // quando è 1 allora scambia a con b
+                });
+                console.log('sto ordinando...')
+                if (isOrderedArray(orderedArray) === true) {
+                    // mostro il risultato dell'array ordinato all'interno del div#ris
+                    document.getElementById('ris').innerHTML = orderedArray.join(', ');
+                    return;
+                } else {
+                    return sort1();
+                }
+            }, 0);
+            
+        };
+    </script>
+</body>
+</html>
