@@ -14,10 +14,15 @@ Montagna.prototype.init = function init () {
     this.btnGenerator.addEventListener(
         'click',
         () => {
+            this.cleanGrid();
             this.generateGrid();
         }
     );
 };
+
+Montagna.prototype.cleanGrid = function cleanGrid () {
+    this.mapContainer.innerHTML = '';
+}
 
 Montagna.prototype.generateGrid = function generateGrid () {
     for (let i = 0; i < this.__SIZE_HEIGHT; i++) {
@@ -26,6 +31,7 @@ Montagna.prototype.generateGrid = function generateGrid () {
         console.log(row); // <div class="row"></div>
         for(let j = 0; j < this.__SIZE_WIDTH; j++) {
             const block = document.createElement('div');
+            block.innerText = Math.floor(Math.random()*100);
             block.classList.add('block');
             console.log(block); // <div class="block"></div>
 
