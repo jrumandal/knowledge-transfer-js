@@ -35,8 +35,8 @@
             let mappa = document.getElementById('map'); //  <div id="map"></div>
             let bottoneGeneratore = document.getElementsByClassName('btn')[0]; // <button class="btn">Genera montagna</button>
             const generatore = new Montagna(mappa, bottoneGeneratore);
-
-
+            generatore.init();
+        
             console.log(generatore);
         };
     </script>
