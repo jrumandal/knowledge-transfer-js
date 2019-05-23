@@ -30,20 +30,15 @@
     </div>
     <script src="./index.js"></script>
     <script>
-        var pippo = 5;
-
-        // console.log(pippo);
-
         // Eseguo questa funzione quando finisce il caricamento della pagina
         window.onload = function () {
-            const generatore = new Montagna();
-            console.log('è un oggetto?', typeof generatore === 'object');
-            console.log('è un istanza di tipo Montagna?', (generatore instanceof Montagna) === true);
-            // console.log(generatore);
-            console.log('valore dopo scarico completo della pagina html e dopo l\'iniziazzione dell\'oggetto Montagna', pippo);
-        };
+            let mappa = document.getElementById('map'); //  <div id="map"></div>
+            let bottoneGeneratore = document.getElementsByClassName('btn')[0]; // <button class="btn">Genera montagna</button>
+            const generatore = new Montagna(mappa, bottoneGeneratore);
 
-        console.log('fuori dal unload quindi eseguito subito appena scaricato lo script', pippo);
+
+            console.log(generatore);
+        };
     </script>
 </body>
 </html>

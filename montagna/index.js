@@ -1,6 +1,8 @@
 /**
  * Costruttore
+ * 
  */
-function Montagna () {
-    pippo = 'ciao'
+function Montagna (map, button) {
+    this.btnGenerator = button;
+    this.mapContainer = map;
 }
