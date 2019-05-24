@@ -103,7 +103,7 @@ Montagna.prototype.flowTheRiver = function flowTheRiver (x, y) {
             for (let C = y-1; C < y + 2; C++) {
                 // if (R === i && C === y) continue;
                 if (this.dataMatrix[R] !== undefined && this.dataMatrix[R][C] !== undefined) {
-                    if (!this.dataMatrix[R][C].alreadyChecked && this.dataMatrix[R][C].height < num) {
+                    if (this.dataMatrix[R][C].height < num) {
                         this.dataMatrix[R][C].block.classList.add('wet');
                         this.flowTheRiver(R, C);
                     }
