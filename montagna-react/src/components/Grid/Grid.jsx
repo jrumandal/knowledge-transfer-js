@@ -51,15 +51,19 @@ class Grid extends React.Component {
     };
 
     render () {
+        var that = this;
         const { dataMatrix } = this.state;
         // const dataMatrix = this.state.dataMatrix;
         const rowBlock = dataMatrix.map((rigaDiAltitutidini, x) => {
             return (
                 <Row key={x}
                     data={rigaDiAltitutidini}
-                    getFunctionToExecRiverFlow={(y) => () => {
-                        this.flowTheRiver(x, y);
-                    }}
+                    getFunctionToExecRiverFlow={function (y) {
+                        return function () {
+                            that.flowTheRiver(x, y);
+                        }
+                    }
+                }
                 />
             );
         });
