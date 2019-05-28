@@ -20,7 +20,10 @@ class Grid extends React.Component {
             for(let i = 0; i < 10; i++) {
                 nuovoDataMatrix[i] = [];
                 for (let j = 0; j < 10; j++) {
-                    nuovoDataMatrix[i][j] = Math.floor(Math.random()*100);
+                    nuovoDataMatrix[i][j] = {
+                        altitude: Math.floor(Math.random()*100),
+                        isWet: false,
+                    };
                 }
             }
             newState.dataMatrix = nuovoDataMatrix;
@@ -29,26 +32,55 @@ class Grid extends React.Component {
     }
 
     flowTheRiver (x, y) {
-        const { dataMatrix } = this.state;
+        // this.setState(
+        //     (oldState) => {
+        //         const newState = {
+        //             ...oldState
+        //         };
+        //         let dataMatrixCopy = oldState.dataMatrix;
+
+                this.getFullWetMatrix(this.state.dataMatrix, x, y);
+                // newState.dataMatrix = dataMatrixCopy;
+
+        //         return newState;
+        //     }
+        // );
+    };
+
+    getFullWetMatrix(dataMatrix, x, y) {
         // debugger;
         if (dataMatrix[x] !== undefined && dataMatrix[x][y] !== undefined) {
-            const num = dataMatrix[x][y].height;
+            const num = dataMatrix[x][y].altitude;
         
             for (let R = x-1; R < x + 2; R++) {
                 for (let C = y-1; C < y + 2; C++) {
                     // if (R === i && C === y) continue;
                     if (dataMatrix[R] !== undefined && dataMatrix[R][C] !== undefined) {
-                        if (dataMatrix[R][C].height < num) {
-                            dataMatrix[R][C].block.classList.add('wet');
-                            this.flowTheRiver(R, C);
+                        if (dataMatrix[R][C].altitude < num) { // qui vuol dire che deve essere bagnato
+                            dataMatrix[R][C].isWet = true;
+                            this.setState({
+                                dataMatrix
+                            }, () => {
+                                setTimeout(() => {
+                                    this.getFullWetMatrix(dataMatrix, R, C);
+                                }, 300)
+                            })
                         }
                     } else {
-                        return;
+                        continue;
                     }
                 }
             }
-        } else return;
-    };
+            console.log('end');
+            return;
+        } else {
+            console.log('end');
+            return;
+        }
+
+
+
+    }
 
     render () {
         var that = this;

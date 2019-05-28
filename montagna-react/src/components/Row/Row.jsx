@@ -6,9 +6,13 @@ class Row extends React.Component {
     render () {
         /** Array di numeri */
         const altitudini = this.props.data;
-        const blocchi = altitudini.map((valore, y) => {
+        const blocchi = altitudini.map((oggetto, y) => {
             return (
-                <Block key={y} methodToExecRiverFlow={this.props.getFunctionToExecRiverFlow(y)} >{valore}</Block>
+                <Block
+                    key={y}
+                    methodToExecRiverFlow={this.props.getFunctionToExecRiverFlow(y)}
+                    isWet={oggetto.isWet}
+                >{oggetto.altitude}</Block>
             )
         });
 

@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 0.3s;
+    transition: 'background';
 }
 
 .row:nth-child(even) .block:nth-child(even),
@@ -21,4 +23,8 @@
 
 .block.wet {
     background: lightskyblue !important;
+}
+
+.block.wet-source {
+    background: #8e8eff !important;
 }

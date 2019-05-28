@@ -21,7 +21,7 @@ class Block extends Component {
         // }
 
         return (
-            <div className={`block ${(this.state.wet) ? 'wet': ''}`} onClick={this.onClick}>{this.props.children}</div>
+            <div className={`block ${(this.props.isWet) ? 'wet': ''} ${this.state.wet ? 'wet-source': ''}`} onClick={this.onClick}>{this.props.children}</div>
         );
     }
 };
