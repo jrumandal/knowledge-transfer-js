@@ -1,68 +1,16 @@
+# Riverflow Generator
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project generates a grid(mountain) that describes fraction of area as blocks.
+Every block displays an altitude.
+
+By clicking a block, the application defines the root of the river and then propagates within the area.
+
+The purpose of this project was for knowledge transfer.
+With this simple example I have reviewed React and async programming.
+
+## Demo
+![Alt Text](https://agora-file-storage-prod.s3.us-west-1.amazonaws.com/profile/portfolio/attachment/5260902763079673311?response-content-disposition=inline%3B%20filename%3D%22RiverflowGenerator.gif%22%3B%20filename%2A%3Dutf-8%27%27RiverflowGenerator.gif&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBwaCXVzLXdlc3QtMSJIMEYCIQDHV9ERUMH%2Bg1fcKdjAekk2pe%2FHjyz2BljsVciDjQk8iAIhAMSEPdL8jEdbGJvhL%2Fxrt0ELksbNNHDh%2B2t5eMJdL7AnKtICCDQQABoMNzM5OTM5MTczODE5IgwG7Zw1vSKa1%2F0zSl0qrwINpcSSyBN0oBEONCHPoTFOzYmeum2VklY7GdBdGwWToRff%2BQPun5g3J8kqvX%2FbAgp5q8QM8TLw9DaUVCeEnYlLgCwJhqMSm20n3BqHIs86U7Q0dpM8oprsDdBPwYRpj5JBAf1%2FqHgakbcvMkmF7kOYcsQ7OCsonK6utsNhp2jpu9GMC2wV1H8740CqXKwJDHQ7PDtvVZbH8iRpYdFBNM8gXZrLRRDIEEUtupNWHAWmYASWhMiY574aDxN1PN9ooblGkfZeu6Jeviq6bff6eDEwMB5fUybPwbp0%2BGtOLpCnmW8jDBW6nhRRzWG5gzWS4ItfbCAQ8FopvIcYi4oNJL3%2ByJ5%2BVZBkN1ERocCQBW2MwvmGjqrE2OMQOL9AyLt05QRN5K8A8Htn7uFxUeWcI4QwidT87QU6zAIhlvuNF8OF7vXpHCNX6d2HHybY3bn4Ywdd3c%2FQf2j86uEDc8uAnSBi4Pkx3Ph6X4CKElsvFuNArJ%2FzzLxtr4PLin6XBRK7u27OJ7FlixbU6GWo8w8DOS89P9t9brDMMC88WcBrQ94oHjYf0FaCWSml7dE3vowEi%2B09ZuaFcdCxEJsbpnLcktZJ6j8kUJqMYPDR86hP8awrnkKS%2Bi%2BwLUEY7bpj0GtJN%2B%2FI%2F%2FJpYBOHn9FHnlM4ZgKeu3acUU1FmSOA7Cwn8%2FoTB%2BkGlzgzFHo1jM9K2iKbdzykVAH8nVX1CPBaBx0kJKLoicuO74ljJTMFX8W1WpLpatQKmjVeHK0i6Usml6%2BqzGvecNyOoERklfAJSJgTNeGTPsUNT5%2FxjWyKw%2FPR8pmZ%2BGhTt2cynyB%2FAzFYFzFVJpUO3K86uF5KauPIldChJWmjHgj4yg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20191103T195818Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA2YR6PYW54NYDOR6Q%2F20191103%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Signature=e87f13abc4161651a85ea76c95913d729b10f25c65295419d3dae01e4462207e)
 
 ## Available Scripts
+Find everything in `package.json`
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
